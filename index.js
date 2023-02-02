@@ -30,6 +30,7 @@ function startGame() {
     player.chips -= 25;
     if (player.chips >= 0) {
         isAlive = true
+        hasBlackJack = false;
         let firstCard = getRandomCard()
         let secondCard = getRandomCard()
         cards = [firstCard, secondCard]
