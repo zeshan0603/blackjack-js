@@ -79,6 +79,8 @@ function resetGame() {
     cardsEl.textContent = "Cards: "
     sumEl.textContent = "Sum: "
     player.chips = 200;
+    isAlive = true;
+    hasBlackJack = false;
     playerEl.textContent = player.name + ": $" + player.chips
 
 }
