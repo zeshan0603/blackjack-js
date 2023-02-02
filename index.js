@@ -69,7 +69,7 @@ function newCard() {
         sum += card
         cards.push(card)
         renderGame()
-    } else if (isAlive === false || hasBlackJack === true || player.chips === 0) {
+    } else if (isAlive === false || hasBlackJack === true || player.chips == 0) {
         messageEl.textContent = "You cannot draw a new card."
     }
 }
