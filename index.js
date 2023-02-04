@@ -1,8 +1,9 @@
+
+
 let player = {
     name: "Per",
     chips: 200
 }
-
 let cards = []
 let sum = 0
 let hasBlackJack = false
@@ -15,16 +16,24 @@ let playerEl = document.getElementById("player-el")
 
 
 playerEl.textContent = player.name + ": $" + player.chips
+
+
+/* ========= RANDOM CARD ============*/
+
 function getRandomCard() {
     let randomNumber = Math.floor(Math.random() * 13) + 1
+    let aceRandomNumber = Math.floor(Math.random() * 2)
+    let aceCard = [1, 11];
     if (randomNumber > 10) {
         return 10
     } else if (randomNumber === 1) {
-        return 11
+        return aceCard[aceRandomNumber]
     } else {
         return randomNumber
     }
 }
+
+/* ========= START GAME ============*/
 
 function startGame() {
     player.chips -= 25;
@@ -43,6 +52,8 @@ function startGame() {
     }
 
 }
+
+/* ========= RENDER GAME ============*/
 
 function renderGame() {
     cardsEl.textContent = "Cards: "
@@ -64,6 +75,8 @@ function renderGame() {
 }
 
 
+/* ========= NEW CARD ============*/
+
 function newCard() {
     if (isAlive === true && hasBlackJack === false && player.chips >= 0) {
         let card = getRandomCard()
@@ -74,6 +87,9 @@ function newCard() {
         messageEl.textContent = "You cannot draw a new card."
     }
 }
+
+
+/* ========= RESET GAME ============*/
 
 function resetGame() {
     messageEl.textContent = "Want to play a round?"
